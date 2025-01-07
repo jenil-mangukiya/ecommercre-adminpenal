@@ -1,0 +1,26 @@
+.accordion-button{
+  background-color: transparent !important;
+  padding: 0%;
+  padding: 5px;
+}
+
+.accordion-header{
+  background-color: #343a40;
+}
+.bor{
+  border: none;
+}
+.accordion ,
+.accordion-item{
+  border: none;
+  background-color: #343a40;
+}
+.size-bar-1{
+  width: 300px;
+}
+.c-price{
+  font-size: large;
+}
+.dec{
+  text-decoration: none;
+}

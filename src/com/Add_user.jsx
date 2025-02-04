@@ -17,14 +17,14 @@ function Add_user() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('')
     const [repassword, setRepassword] = useState('')
-
+    const BASE_URL = process.env.REACT_APP_BASE_URL;
     const registerUser = (e) => {
 
         e.preventDefault()
 
         if(name && email && password && password===repassword){
             
-            axios.post('http://localhost:5000/admin/signup', {
+            axios.post(`${BASE_URL}/admin/signup`, {
                 name : name,
                 email : email,
                 password : password

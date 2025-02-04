@@ -13,14 +13,14 @@ function Edit() {
   const [discription, setDiscription] = useState("");
   const [productType, setProductType] = useState("");
   const navigate = useNavigate();
-
+  const BASE_URL = process.env.REACT_APP_BASE_URL;
   const files = file ? [...file] : [];
 
     useEffect(() => {
         if (!sessionStorage.getItem('userid')) {
             navigate('/');
         }
-        axios.get(`http://localhost:5000/admin/getsingleproduct/${id}`, {
+        axios.get(`${BASE_URL}/admin/getsingleproduct/${id}`, {
         })
             .then(function (response) {
                 // console.log(response.data.productData);

@@ -7,12 +7,13 @@ import axios from 'axios';
 function Manage() {
     const [data, setdata] = useState([]);
     const navigate = useNavigate()
+    const BASE_URL = process.env.REACT_APP_BASE_URL;
 
     useEffect(() => {
         if (!sessionStorage.getItem('userid')) {
             navigate('/');
         }
-        axios.get('http://localhost:5000/admin/getallproduct', {
+        axios.get(`${BASE_URL}/admin/getallproduct`, {
         })
             .then(function (response) {
                 console.log(response.data.productData);

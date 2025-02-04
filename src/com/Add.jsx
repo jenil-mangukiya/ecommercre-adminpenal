@@ -21,6 +21,7 @@ function Add() {
     const [discription, setDiscription] = useState("");
     const [productType, setProductType] = useState("");
     const navigate = useNavigate();
+    const BASE_URL = process.env.REACT_APP_BASE_URL;
 
     const files = file ? [...file] : [];
 
@@ -40,7 +41,7 @@ function Add() {
         axios({
             headers: { "Content-Type": "multipart/form-data" },
             method: "POST",
-            url: "http://localhost:5000/admin/addproduct",
+            url: `${BASE_URL}/admin/addproduct`,
             data: data,
         })
             .then((response) => {

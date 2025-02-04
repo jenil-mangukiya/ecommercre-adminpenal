@@ -7,12 +7,12 @@ function Log() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate()
-
+    const BASE_URL = process.env.REACT_APP_BASE_URL;
     const registerUser = (e) => {
 
         e.preventDefault()
 
-            axios.post('http://localhost:5000/admin/login', {
+            axios.post(`${BASE_URL}/admin/login`, {
                 email:email,
                 password:password
 

@@ -9,12 +9,13 @@ function Delet() {
 
     const [data, setdata] = useState([]);   
     const navigate = useNavigate() 
+    const BASE_URL = process.env.REACT_APP_BASE_URL;
 
     useEffect(() => {
         if (!sessionStorage.getItem('userid')) {
             navigate('/');
         }
-        axios.delete(`http://localhost:5000/admin/deleteproduct/${id}`, {
+        axios.delete(`${BASE_URL}/admin/deleteproduct/${id}`, {
         })
             .then(function (response) {
                 console.log(response.data.productData);
